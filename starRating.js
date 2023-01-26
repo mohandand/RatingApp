@@ -11,12 +11,17 @@ const RatingApp = () => {
           <button
             type="text"
             key={index}
-            className={index <= rating ? 'on' : 'off'}
+            className={index <= rating || hover ? 'on' : 'off'}
             onClick={() => {
               setRating(index);
             }}
+            onMouseEnter={() => {
+              setHover(index);
+            }}
+            onMouseLeave={() => {
+              setHover(rating);
+            }}
           >
-            {' '}
             <span className="star">&#9733;</span>
           </button>
         );
