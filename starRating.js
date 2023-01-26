@@ -6,11 +6,15 @@ const RatingApp = () => {
   return (
     <div className="star-rating">
       {[...Array(5)].map((star, index) => {
+        index += 1;
         return (
           <button
             type="text"
             key={index}
             className={index <= rating ? 'on' : 'off'}
+            onClick={() => {
+              setRating(index);
+            }}
           >
             {' '}
             <span className="star">&#9733;</span>
